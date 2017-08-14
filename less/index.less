@@ -1,0 +1,202 @@
+//定义参数
+@wh:100%;
+
+@fixed0:0;
+
+@fixed50:50%;
+
+@padding:10px;
+
+@border-radius:20px;
+
+@colorW:#fff;
+@justify-content:space-between;
+
+/*通用***************/
+html,body,section{
+  width: @wh;
+  height: @wh;
+  overflow: hidden;
+}
+
+section{
+  position: relative;
+}
+
+/*每屏的背景颜色***************/
+section.p1{
+  background: url("../images/page1_glow.png") no-repeat center 100px,linear-gradient(0deg, #395ecb 0%, #3657be 35%, #242161 75%, #1a0531 100%);
+}
+
+section.p2{
+  background: linear-gradient(0deg, #41b93e 0%, #3b9e3c 35%, #274535 75%, #190530 100%);
+}
+
+section.p3{
+  background: linear-gradient(0deg, #395ecb 0%, #3657be 35%, #242161 75%, #1a0531 100%);
+}
+
+section.p4{
+  background: url(../images/page4_glow.png) no-repeat center 300px, linear-gradient(0deg, #ff9f42 0%, #ed923d 35%, #6d3816 75%, #2e0b04 100%);
+}
+
+section.p5{
+  background: url(../images/page5_glow.png) no-repeat center -300px,linear-gradient(0deg, #d74d53 0%, #c44655 35%, #4c184c 75%, #110145 100%);
+}
+
+/*左边的logo图标******************/
+.left_logo{
+  position: fixed;
+  left:@fixed0 + 10px;
+  top:30px;
+
+  width: 300px;
+  height:40px;
+  display: flex;
+  justify-content: @justify-content;
+  align-items: center;
+}
+
+.left_logo a{
+  width: 85px;
+  color: @colorW;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid  @colorW;
+  padding:@padding - 5;
+  border-radius: @border-radius;
+}
+
+/*右边的指示器圆点**********************/
+.gps{
+  width: 60px;
+  height: 150px;
+  position: fixed;
+  right:@fixed0;
+  top:@fixed50;
+  margin-top:-75px;
+}
+.gps ul {
+  width:@wh;
+  height: @wh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.gps ul li{
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.gps ul li.current{
+  background-color: @colorW;
+}
+/*底部滚动小图标**********************/
+.scroll{
+  width: 30px;
+  position: fixed;
+  left:@fixed50;
+  bottom:30px;
+  margin-left:-15px;
+  animation: upDownUp 0.55s infinite alternate;
+}
+@keyframes upDownUp {
+  0%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(10px);
+  }
+}
+
+/*底部内容****************************/
+.footer{
+  height: 60px;
+  width: @wh;
+  position: fixed;
+  bottom: @fixed0;
+  left: @fixed0;
+  display: flex;
+  justify-content: @justify-content;
+  align-items: center;
+  color: @colorW;
+}
+
+.footer .footer-left{
+  padding-left: @padding;
+  font-weight: bold;
+}
+
+.footer .footer-right{
+  display: flex;
+  padding-right:@padding;
+}
+
+.footer .footer-right li a{
+  text-decoration: none;
+  color: @colorW;
+}
+
+ .footer .footer-right span{
+  margin: @padding - 5;
+}
+
+
+ /*第一屏内容***************/
+.p1-header{
+  width: 500px;
+  height: 60px;
+  position: fixed;
+  top:50px;
+  left:@fixed50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left:-250px;
+}
+
+.p1-header a{
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  color: @colorW;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid  @colorW;
+  padding:@padding - 5;
+  border-radius: @border-radius;
+}
+.p1-header img{
+  width: 300px;
+}
+.p1-main{
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  top:@fixed50;
+  left:@fixed50;
+  margin-left:-300px;
+  margin-top:-300px;
+}
+.p1-main li{
+  width: 580px;
+  height: 361px;
+  position: absolute;
+  top:@fixed50;
+  left:@fixed50;
+  margin-left:-290px;
+  margin-top:-180px;
+}
+
+.p1-round{
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  top:@fixed50;
+  left:@fixed50;
+  margin-left:-300px;
+  margin-top:-300px;
+}
